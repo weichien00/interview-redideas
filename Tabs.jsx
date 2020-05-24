@@ -24,26 +24,15 @@ import {
   search
 } from 'ionicons/icons';
 
-
-import { AppContextProvider, AppContext } from './State';
-
 import Music  from './pages/Home';
 import Search from './pages/Search';
 import You    from './pages/You';
 import Track  from './pages/Track';
 import Readme from './pages/Readme';
 
-import TabBarSticky from './components/TabBarSticky';
-import TrackPreview from './components/TrackPreview';
-
 const Tabs = () => {
-  const { state, dispatch } = useContext(AppContext);
-
-  return (
-    <>
-    <TabBarSticky>
-      <TrackPreview />
-    </TabBarSticky>
+  
+  return (    
     <IonTabs>
       <IonRouterOutlet>
         <Route path="/app/browse" component={Music} exact={true} />
@@ -74,7 +63,7 @@ const Tabs = () => {
         </IonTabButton>
       </IonTabBar>
     </IonTabs>
-  </>
+  
   );
 }
 

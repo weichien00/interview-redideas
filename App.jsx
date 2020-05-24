@@ -17,38 +17,26 @@ import { IonReactRouter } from '@ionic/react-router';
 
 import { home, informationCircle, person, search } from 'ionicons/icons';
 
-
-import { AppContextProvider } from './State';
+import CourseTabs from "./pages/CourseTabs";
 
 import urls from './urls';
 
 import Tabs from './Tabs';
-import Login  from './pages/Login';
-import ResetPassword from './pages/ResetPassword';
-import Signup  from './pages/Signup';
-
-import Audio from './components/Audio';
-import TrackPlayer from './components/TrackPlayer';
 
 const App = () => {
   return (
-  <AppContextProvider>
+  
     <IonApp>
       <IonReactRouter>
         <IonPage>
-          <IonRouterOutlet>
-            <Route path={urls.LOGIN} component={Login} exact={true} />
-            <Route path={urls.SIGNUP} component={Signup} exact={true} />
-            <Route path={urls.RESET_PASSWORD} component={ResetPassword} exact={true} />
+          <IonRouterOutlet>            
              <Route exact={true} path="/" render={() => <Redirect to={urls.APP_HOME} />} />
+             <Route path="/question" exact><CourseTabs /></Route>
           </IonRouterOutlet>
-          <Route path="/app" component={Tabs} />
-          <Audio />
-          <TrackPlayer />
+          <Route path="/app" component={Tabs} />          
         </IonPage>
       </IonReactRouter>
-    </IonApp>
-  </AppContextProvider>
+    </IonApp>  
   );
 }
 
