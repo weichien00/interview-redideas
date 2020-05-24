@@ -1,17 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './src/App';
-import * as serviceWorker from './src/serviceWorker';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { Route } from 'react-router-dom';
+import Page1 from './Page1';
+import NotFound from './NotFound';
+import { IonReactRouter, ViewManager } from '@ionic/react-router';
+import { IonApp, IonPage, IonButton, IonIcon, IonRouterOutlet } from '@ionic/react';
+import './style.css';
+import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+render(<App />, document.getElementById('root'));
