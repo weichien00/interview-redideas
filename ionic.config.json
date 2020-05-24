@@ -1,5 +1,7 @@
 {
-  "name": "intview",
-  "integrations": {},
-  "type": "angular"
+  "name": "interview",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
 }
