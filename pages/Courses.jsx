@@ -20,8 +20,8 @@ import { useHistory } from "react-router-dom";
 export const COURSE_DATA = [
   {
     id: "c1",
-    title: "Ionic + React - The Practical Guide",
-    enrolled: new Date("03/22/2019"),
+    title: "Question 1",
+    enrolled: new Date("05/25/2020"),
     goals: [
       { id: "c1g1", text: "Finish the course!" },
       { id: "c1g2", text: "Learn a Lot!" },
@@ -30,8 +30,8 @@ export const COURSE_DATA = [
   },
   {
     id: "c2",
-    title: "React.js - The Complete Guide",
-    enrolled: new Date("05/15/2018"),
+    title: "Question 2",
+    enrolled: new Date("05/25/2020"),
     goals: [
       { id: "c2g1", text: "Finish the course!" },
       { id: "c2g2", text: "Learn a Lot! 2" },
@@ -40,8 +40,8 @@ export const COURSE_DATA = [
   },
   {
     id: "c3",
-    title: "JavaScript - The Complete Guide",
-    enrolled: new Date("01/22/2020"),
+    title: "Question 3",
+    enrolled: new Date("05/25/2020"),
     goals: [
       { id: "c3g1", text: "Finish the course!" },
       { id: "c3g2", text: "Learn a Lot!" },
@@ -67,7 +67,7 @@ const Course = () => {
                   <IonCardHeader>
                     <IonCardTitle>{course.title}</IonCardTitle>
                     <IonCardSubtitle>
-                      Enrolled on{" "}
+                      Last update {" "}
                       {course.enrolled.toLocaleDateString("en-US", {
                         year: "numeric",
                         month: "2-digit",
@@ -83,7 +83,7 @@ const Course = () => {
                         //routerLink={`/courses/${course.id}`}
                         routerLink={`/question/${course.id}`}
                       >
-                        View Course Goals
+                        View answer
                       </IonButton>
                     </div>
                   </IonCardContent>

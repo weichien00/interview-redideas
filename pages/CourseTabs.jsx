@@ -45,11 +45,11 @@ const CourseTabs = () => {
       <IonTabBar slot="bottom">
         <IonTabButton tab="all-goal" href="/question/all-goals">
           <IonIcon icon={list} />
-          <IonLabel>All Goals</IonLabel>
+          <IonLabel>My Profile</IonLabel>
         </IonTabButton>
         <IonTabButton tab="courses" href="/question/list">
           <IonIcon icon={trophyOutline} />
-          <IonLabel>All Goals</IonLabel>
+          <IonLabel>All Question</IonLabel>
         </IonTabButton>
       </IonTabBar>
     </IonTabs>

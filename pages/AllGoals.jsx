@@ -17,11 +17,11 @@ const AllGoals = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>All Goals</IonTitle>
+          <IonTitle>My Profile</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <h2>This Works === All Goals</h2>
+        <h2></h2>
       </IonContent>
     </IonPage>
   );
