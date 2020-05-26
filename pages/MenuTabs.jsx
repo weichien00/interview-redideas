@@ -10,7 +10,6 @@ import {
 } from "@ionic/react";
 
 import Courses from "./Courses";
-import CourseGoals from "./CourseGoals";
 import MyProfile from "./MyProfile";
 import Question1 from "./Question1";
 import Question2 from "./Question2";
