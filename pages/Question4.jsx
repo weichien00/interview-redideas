@@ -23,14 +23,14 @@ import {
   IonAlert
 } from "@ionic/react";
 
-import { calculatorOutline, refreshOutline } from "ionicons/icons";
+import { calculatorOutline } from "ionicons/icons";
 
 import { useHistory } from "react-router-dom";
 
 const Question4 = function() {
   const numberInputRef = useRef(null);
-  const [output] = useState();
-  const [error, setError] = useState();
+  // const [output] = useState();
+  // const [error, setError] = useState();
   const [answer, setAnswer] = useState();
 
   const inputChangeHandler = () => {
@@ -42,16 +42,16 @@ const Question4 = function() {
     //const enteredValue = 9;
     var maxGap = 0;
     var curMaxGap = 0;
-    var binStr = enteredValue.toString(2);
-    console.log(binStr);
-    var startIndexFromEnd = binStr.length - 1;
+    var convertToBinary = enteredValue.toString(2);    
+    console.log(convertToBinary);
+    var startIndexFromEnd = convertToBinary.length - 1;
     for (startIndexFromEnd; startIndexFromEnd >= 0; startIndexFromEnd--) {
-      if (binStr.charAt(startIndexFromEnd) != "0") {
+      if (convertToBinary.charAt(startIndexFromEnd) != "0") {
         break;
       }
     }
     for (var i = startIndexFromEnd - 1; i >= 0; i--) {
-      if (binStr.charAt(i) == "0") {
+      if (convertToBinary.charAt(i) == "0") {
         curMaxGap = curMaxGap + 1;
       } else {
         if (curMaxGap > maxGap) {
@@ -60,8 +60,7 @@ const Question4 = function() {
         curMaxGap = 0;
       }
     }
-    setAnswer(maxGap);
-    console.log("the answer" ,answer);
+    setAnswer(maxGap);    
   };
 
   const clearError = () => {
@@ -69,12 +68,7 @@ const Question4 = function() {
   };
 
   return (
-    <IonPage>
-      <IonAlert
-        isOpen={!!error}
-        message={error}
-        buttons={[{ text: "Okay", handler: clearError }]}
-      />
+    <IonPage>      
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
