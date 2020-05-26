@@ -88,8 +88,13 @@ class Question2 extends Component {
       return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Question 3 {this.state.maxGap}</IonTitle>
+                <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/question/list" />
+          </IonButtons>
+          <IonTitle>
+            Question 3 {this.state.maxGap}
+          </IonTitle>          
         </IonToolbar>
       </IonHeader>
       <IonContent>

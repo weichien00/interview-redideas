@@ -14,6 +14,8 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCardSubtitle,
+  IonButtons,
+  IonBackButton,
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
 
@@ -61,9 +63,14 @@ class Question2 extends Component {
   render(){
       return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Question 2 {this.state.maxGap}</IonTitle>
+      <IonHeader>        
+                <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/question/list" />
+          </IonButtons>
+          <IonTitle>
+            Question 2 {this.state.maxGap}
+          </IonTitle>          
         </IonToolbar>
       </IonHeader>
       <IonContent>

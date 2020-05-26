@@ -18,7 +18,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import { home, informationCircle, person, search } from 'ionicons/icons';
 
 import CourseTabs from "./pages/CourseTabs";
-import CourseTabs from "./pages/Question1";
+import Question1 from "./pages/Question1";
 
 import urls from './urls';
 
@@ -35,7 +35,7 @@ const App = () => {
           <IonRouterOutlet>
              <Route exact={true} path="/" render={() => <Redirect to={urls.APP_HOME} />} />
              <Route path="/question/list" exact><CourseTabs /></Route>
-             <Route path="/question/c1" exact><CourseTabs /></Route>
+             
              <Redirect path='/' to='/question/list' exact />
           </IonRouterOutlet>
           <Route path="/app" component={Tabs} />

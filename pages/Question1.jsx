@@ -14,6 +14,8 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCardSubtitle,
+  IonButtons,
+  IonBackButton,  
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
 
@@ -246,7 +248,12 @@ var unique = Array.from(new Set(squardArray))
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Question 1</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/question/list" />
+          </IonButtons>
+          <IonTitle>
+            Question 1
+          </IonTitle>          
         </IonToolbar>
       </IonHeader>
       <IonContent>        
