@@ -15,6 +15,7 @@ import AllGoals from "./AllGoals";
 import Question1 from "./Question1";
 import Question2 from "./Question2";
 import Question3 from "./Question3";
+import Question4 from "./Question4";
 
 import { list, trophyOutline } from "ionicons/icons";
 
@@ -28,17 +29,7 @@ const CourseTabs = () => {
         </Route>
         <Route path="/question/all-goals" exact>
           <AllGoals />
-        </Route>
-        <Route path="/question/c1">
-          <Question1 />
-        </Route>
-        <Route path="/question/c2">
-          <Question2 />
-        </Route>
-        <Route path="/question/c3">
-          <Question3 />
-        </Route>
-        
+        </Route>                
         
       </IonRouterOutlet>
       <IonTabBar slot="bottom">

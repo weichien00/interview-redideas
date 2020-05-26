@@ -48,9 +48,20 @@ export const COURSE_DATA = [
     ],
     link:"Question3"
   },
+    {
+    id: "c4",
+    title: "Question 4",
+    enrolled: new Date("05/25/2020"),
+    goals: [
+      { id: "c3g1", text: "Finish the course!" },
+      { id: "c3g2", text: "Learn a Lot!" },
+    ],
+    link:"Question3"
+  },
 ];
 
 const Course = () => {
+  console.log("courses");
   return (
     <IonPage>
       <IonHeader>

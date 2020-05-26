@@ -25,8 +25,6 @@ import { AppContext, getHotTracks, getNewTracks, playTrack } from '../State';
 
 import { img } from '../util';
 
-import './Home.css';
-
 export const COURSE_DATA = [
   {
     id: "c1",

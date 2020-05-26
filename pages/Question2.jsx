@@ -1,4 +1,4 @@
-import React ,{useState ,Component} from "react";
+import React ,{useState} from "react";
 import {
   IonHeader,
   IonContent,
@@ -16,74 +16,57 @@ import {
   IonCardSubtitle,
   IonButtons,
   IonBackButton,
+  IonItem,
+  IonLabel,
+  IonInput,
+  IonIcon,  
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
+import UniqueValue  from "../components/GetUniqueValue";
 
-class Question2 extends Component {
+const theArray = [4, 5, 6, 5, 6];
 
-    constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-      uniq:[]
-    };
-  }
-
-   componentDidMount(){
-
-     let arr = [4, 5, 6, 5, 6,7,7,8];
-    var a = [], b = [], prev;
-
-    arr.sort();
-    for ( var i = 0; i < arr.length; i++ ) {
-        if ( arr[i] !== prev ) {
-            a.push(arr[i]);
-            b.push(1);
-            console.log(i);
-            console.log("if");
-        } else {
-            console.log(i);
-            console.log("else");
-            b[b.length-1]++;
-            a.pop(arr[i]);
-
-        }
-        prev = arr[i];
-    }
-
-    //return [a, b];
-  console.log(a);
-  console.log(b);
-  //return out;
-    this.setState({ uniq: a })    
-  //  return maxGap;
-    
-  }
-
-  render(){
-      return (
-    <IonPage>
-      <IonHeader>        
-                <IonToolbar>
+const Question2 = function () {
+    return (
+    <IonPage>      
+      <IonHeader>
+        <IonToolbar>
           <IonButtons slot="start">
             <IonBackButton defaultHref="/question/list" />
           </IonButtons>
-          <IonTitle>
-            Question 2 {this.state.maxGap}
-          </IonTitle>          
+          <IonTitle>Question 3 {}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonGrid>    
-          {this.state.uniq.map((id,item) => (
-            <div key={id}>{id}</div>
-          ))}      
+        <IonGrid>
+          <IonRow>
+            <IonCol>
+              <IonCard>
+                <IonCardHeader>
+                  <IonCardSubtitle></IonCardSubtitle>
+                  <IonCardTitle>Question 3</IonCardTitle>
+                </IonCardHeader>
+
+                <IonCardContent>
+                  Return unique number from an array of numbers with conditions only one number is
+unique and other numbers are pair (ex: [4, 5, 6, 5, 6], return 4)
+                </IonCardContent>
+              </IonCard>
+            </IonCol>
+          </IonRow> 
+
+          <IonRow>
+            <IonCol>
+              <UniqueValue array={theArray}/>
+            </IonCol>
+          </IonRow>         
+
+          
         </IonGrid>
       </IonContent>
     </IonPage>
   );
 
-  }
-};
+}
 
 export default Question2;

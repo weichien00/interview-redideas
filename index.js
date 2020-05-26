@@ -5,7 +5,8 @@ import Page1 from './Page1';
 import NotFound from './NotFound';
 import { IonReactRouter, ViewManager } from '@ionic/react-router';
 import { IonApp, IonPage, IonButton, IonIcon, IonRouterOutlet } from '@ionic/react';
-import './style.css';
+
 import App from './App';
+import './style.css';
 
 render(<App />, document.getElementById('root'));

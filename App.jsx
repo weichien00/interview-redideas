@@ -19,6 +19,9 @@ import { home, informationCircle, person, search } from "ionicons/icons";
 
 import CourseTabs from "./pages/CourseTabs";
 import Question1 from "./pages/Question1";
+import Question2 from "./pages/Question2";
+import Question3 from "./pages/Question3";
+import Question4 from "./pages/Question4";
 
 import urls from "./urls";
 
@@ -39,6 +42,10 @@ const App = () => {
             <Route path="/question/list" exact>
               <CourseTabs />
             </Route>
+              <Route path="/question/c1"><Question1 /></Route>                          
+              <Route path="/question/c2"><Question2 /></Route>                          
+              <Route path="/question/c3"><Question3 /></Route>                          
+              <Route path="/question/c4"><Question4 /></Route>                          
 
             <Redirect path="/" to="/question/list" exact />
           </IonRouterOutlet>

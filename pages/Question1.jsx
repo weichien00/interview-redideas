@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {
   IonHeader,
   IonContent,
@@ -19,19 +19,21 @@ import {
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
 
-function Question1() {
+const Question1 = function() {
 
+const [answer, setAnswer] = useState();
 
 function storeCoordinate(xVal, yVal, nameVal,array) {
     array.push({x: xVal, y: yVal ,name: nameVal});
 }
 
-var squardArray = [];
+ useEffect(() => {    
+    var squardArray = [];
 
 var coords = [];
 var x_coord = [];
 var y_coord = [];
-const x_max ,x_min ,y_max,y_min;
+const x_max,x_min ,y_max,y_min;
 storeCoordinate(-3, 3, 'P1', coords);
 storeCoordinate(3, 3,'P2', coords);
 storeCoordinate(-6, 0,'P3', coords);
@@ -57,7 +59,7 @@ y_max = Math.max(...y_coord);
 y_min = Math.min(...y_coord);
 // console.log("min y " ,y_min);
 // console.log("max y " ,y_max);
-
+console.log("loop thru ");
 coords.map((item, key) => {
   var current_coor = item;
   console.log("current coort big loop" ,current_coor);
@@ -82,9 +84,6 @@ coords.map((item, key) => {
         var temp_coor_3xleft = current_coor.x - two_y_range ;
         var temp_coor_3xright = current_coor.x + two_y_range;
 
-        
-        
-
         const found_left = coords.some(el => el.x === temp_coor_3xleft && el.y === temp_coor_3yleft );
         console.log("(",temp_coor_3xleft + ","+temp_coor_3yleft+")");
         console.log("found in array ?" ,found);
@@ -92,7 +91,7 @@ coords.map((item, key) => {
         const found = coords.some(el => el.x === temp_coor_3xright && el.y === temp_coor_3yright );
         console.log("(",temp_coor_3xright + ","+temp_coor_3yright+")");
         console.log("found in array ?" ,found);
-        if(found_left){//valid third point. procced to predict forth point
+        if(found_left){//valid third point. procced to create forth point
           var squareObj = [];
           var point_4x_right = current_coor.x - two_y_range;
           var point_4y_right = current_coor.y + two_y_range; //y-axis down
@@ -131,11 +130,7 @@ coords.map((item, key) => {
         
       }else if(two_y_range === 0){
         console.log("-2 point at same y-axis");
-        console.log("-reference point is " ,item );
-        
-        // console.log("x - axis range is " ,two_x_range);
-        // console.log("posible coordiant to create a squard");
-
+        console.log("-reference point is " ,item );        
         //BELOW IS TO generate third point. there are  2 posible point with reference to Current Point. up or down
 
         var temp_coor_3yup = current_coor.y + two_x_range;
@@ -154,12 +149,8 @@ coords.map((item, key) => {
         // console.log("posible Point 3x down (" ,temp_coor_3xdown + ","+temp_coor_3ydown+")" );
         const found = coords.some(el => el.x === temp_coor_3xdown && el.y === temp_coor_3ydown );
         // console.log("found in array ?" ,found);
-        if(found){ //if the predicted third point is valid , proceed predict forth point
-          // console.log("posible Point 4 down base on 3 point ==" );
-          // console.log("(",temp_coor_3xdown + ","+temp_coor_3ydown+")");
-          // console.log("(",current_coor.x + ","+current_coor.y+")");
-          // console.log("(",item.x + ","+item.y+")"); 
-          // console.log("get the name of point");//easier to indentify;
+        if(found){
+          
 
 
           var squareObj = [];
@@ -197,44 +188,69 @@ coords.map((item, key) => {
           
           }                    
 
-        }
-              
-        
-        //console.log(coords);
-
-
-        // console.log("create point up or down to y axis AND CHECK IF AWALABLE IN THE LIST");
-        // console.log("create POINT OPPOSITE THE POINT");        
+        }                      
 
       }else{
         console.log("!!!!-2 point at diff axis2")
         console.log("-reference point is " ,item );
         if(two_x_range < 0 && two_y_range <0){
           console.log("will predice a point which is right and down");
-          var point_4x_right = current_coor.x - two_x_range;
-          var point_4y_down = current_coor.y + two_y_range; //y-axis down         
+          var point_3x_right = current_coor.x - two_x_range;
+          var point_3y_down = current_coor.y + two_y_range; //y-axis down         
         }else if(two_x_range < 0 && two_y_range >0){
+
+          var point_3x_right = current_coor.x - two_x_range;//
+          var point_3y_down = current_coor.y + two_y_range; //y-axis down
           
           console.log("will predice a point which is right and up");
 
         }else if(two_x_range > 0 && two_y_range <0){
             console.log("will predice a point which is left and down");
-            var point_4x_right = current_coor.x - two_x_range;
-            var point_4y_down = current_coor.y + two_y_range; //y-axis down
+            var point_3x_right = current_coor.x - two_x_range;
+            var point_3y_down = current_coor.y + two_y_range; //y-axis down
         }else if(two_x_range > 0 && two_y_range >0){          
-          console.log("will predice a point which is left and up 1");
-          var point_4x_right = current_coor.x - two_x_range;
-          var point_4y_down = current_coor.y + two_y_range; //y-axis down
+          console.log("will predice a point which is right and down ");
+          var point_3x_right = current_coor.x - two_x_range;
+          var point_3y_down = current_coor.y + two_y_range; //y-axis down
 
         }
 
-        console.log("(",point_4x_right + ","+point_4y_down+")");
+        console.log("(",point_3x_right + ","+point_3y_down+")");
+        const found = coords.some(el => el.x === point_3x_right && el.y === point_3y_down );
+        if(found){
 
-        //BELOW IS TO generate third point. there are 2 posible point with reference to Current Point. up/down or left/right
+          var point_4x_right = point_3x_right +two_x_range ;
+          var point_4y_right = point_3y_down +two_y_range; //y-axis down
+           console.log("point 4 = right (",point_4x_right  + ","+point_4y_right+")");
+           const found = coords.some(el => el.x === point_4x_right && el.y === point_4y_right );
+           if(found){
+                  var squarePointList = []; //tmp reference
+            for (var i = 0; i < coords.length; i++) {              
+              if(coords[i].x == current_coor.x && coords[i].y == current_coor.y ){
+                  squarePointList.push(coords[i].name);
+              }
+              if(coords[i].x == item.x && coords[i].y == item.y ){
+                  squarePointList.push(coords[i].name);
+              }              
+              if(coords[i].x == point_3x_right && coords[i].y == point_3y_down ){
+                  squarePointList.push(coords[i].name);
+              }
+              if(coords[i].x == point_4x_right && coords[i].y == point_4y_right ){
+                  squarePointList.push(coords[i].name);
+              }
+            }
+            squarePointList.sort();
+            var combinePoint = squarePointList.join('');
+
+            squardArray.push(combinePoint);
 
 
+           }
 
-
+        }else{
+          console.log("this 3rd point is invalied skip for calculate 4th point");
+        }        
+      
 
       }                
     }  
@@ -245,8 +261,12 @@ coords.map((item, key) => {
   console.log("#############################################");
 });
 
-var unique = Array.from(new Set(squardArray))
-      console.log("FINAL STEP FILTER UNIQ" ,unique);
+
+var unique = Array.from(new Set(squardArray));
+      console.log("FINAL STEP FILTER UNIQ" ,unique.length);
+      setAnswer(3);
+  })
+
     
       return (
     <IonPage>
@@ -260,7 +280,44 @@ var unique = Array.from(new Set(squardArray))
           </IonTitle>          
         </IonToolbar>
       </IonHeader>
-      <IonContent>        
+      <IonContent>
+         <IonCard>
+          <IonCardHeader>
+            <IonCardSubtitle></IonCardSubtitle>
+            <IonCardTitle>Question 1</IonCardTitle>
+          </IonCardHeader>
+
+          <IonCardContent>
+            Create a function to find number of rectangles from an array of coordinates
+            P1(-3,3),P2(3,3),P3(-6,0),P4(0,0),P5(3,0),P6(-3,-3),P7(0,-3),P8(3,-3)
+      </IonCardContent>
+        </IonCard>
+
+        <IonRow>
+            <IonCol>
+              <IonCard>
+                <IonCardHeader>
+                  <IonCardSubtitle />
+                  <IonCardTitle>Answer for Question 1</IonCardTitle>
+                </IonCardHeader>
+
+                <IonCardContent>Number of Square is {answer} </IonCardContent>
+              </IonCard>
+            </IonCol>
+          </IonRow>
+
+          <IonRow>
+            <IonCol>
+              <IonCard>
+                <IonCardHeader>
+                  <IonCardSubtitle />
+                  <IonCardTitle>remarks</IonCardTitle>
+                </IonCardHeader>
+
+                <IonCardContent>the question mention to find number of rectangles but my calculation is based on square. </IonCardContent>
+              </IonCard>
+            </IonCol>
+          </IonRow>
       </IonContent>
     </IonPage>
   );  
