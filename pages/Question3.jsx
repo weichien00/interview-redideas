@@ -21,6 +21,7 @@ import {
   IonInput,
   IonIcon,
   IonAlert,
+  IonList,
 } from "@ionic/react";
 
 import { calculatorOutline, refreshOutline } from "ionicons/icons";
@@ -143,6 +144,24 @@ const Question3 = function () {
                 <IonIcon slot="start" icon={calculatorOutline} />
                 Calculate
               </IonButton>
+            </IonCol>
+          </IonRow>
+
+          <IonRow>
+            <IonCol>
+              <IonCard>
+                <IonCardHeader>
+                  <IonCardSubtitle />
+                  <IonCardTitle>remarks</IonCardTitle>
+                </IonCardHeader>
+
+                <IonCardContent>
+                   <IonList>
+      <IonItem> step 1, Click Add button to add number to form an array  </IonItem>
+      <IonItem> Step 2, Click calculate once finish adding number to array </IonItem></IonList>                
+                
+                </IonCardContent>
+              </IonCard>
             </IonCol>
           </IonRow>
         </IonGrid>

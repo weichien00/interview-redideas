@@ -15,7 +15,9 @@ import {
   IonCardTitle,
   IonCardSubtitle,
   IonButtons,
-  IonBackButton,  
+  IonBackButton,
+  IonList,
+  IonItem
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
 
@@ -261,9 +263,11 @@ coords.map((item, key) => {
   console.log("#############################################");
 });
 
-
+console.log(squardArray);
 var unique = Array.from(new Set(squardArray));
+
       console.log("FINAL STEP FILTER UNIQ" ,unique.length);
+      
       setAnswer(3);
   })
 
@@ -314,7 +318,12 @@ var unique = Array.from(new Set(squardArray));
                   <IonCardTitle>remarks</IonCardTitle>
                 </IonCardHeader>
 
-                <IonCardContent>the question mention to find number of rectangles but my calculation is based on square. </IonCardContent>
+                <IonCardContent>
+                   <IonList>
+      <IonItem> the question mention to find number of rectangles but my calculation is based on square. </IonItem>
+      <IonItem> my algo is loop thru all the points, compare 2 points and predict the possible third point and forth point. if all point meet the "square criteria" then the name of the four points(ex:P1P2P6P8) will save to an array, the array may duplicate square coordinate ,the filtering will carry once all the loop finished. </IonItem></IonList>                
+                
+                </IonCardContent>
               </IonCard>
             </IonCol>
           </IonRow>

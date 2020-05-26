@@ -61,6 +61,7 @@ const Question4 = function() {
       }
     }
     setAnswer(maxGap);
+    console.log("the answer" ,answer);
   };
 
   const clearError = () => {
@@ -104,7 +105,7 @@ representation 10100 and contains..........
             </IonCol>
           </IonRow>
 
-          {answer &&
+          {answer?(
           <IonRow>
             <IonCol>
               <IonCard>
@@ -116,7 +117,18 @@ representation 10100 and contains..........
                 <IonCardContent>Binary Gap is {answer}</IonCardContent>
               </IonCard>
             </IonCol>
-          </IonRow>
+          </IonRow>):(
+          <IonRow>
+            <IonCol>
+              <IonCard>
+                <IonCardHeader>
+                  <IonCardSubtitle />
+                  <IonCardTitle>Answer for Question 4</IonCardTitle>
+                </IonCardHeader>
+                {answer == 0 ?(<IonCardContent>No Binary Gap</IonCardContent>):(<IonCardContent>Please enter number</IonCardContent>)}                
+              </IonCard>
+            </IonCol>
+          </IonRow>)
           }          
 
           <IonRow>
