@@ -207,7 +207,7 @@ coords.map((item, key) => {
         // console.log("create POINT OPPOSITE THE POINT");        
 
       }else{
-        console.log("!!!!-2 point at diff axis")
+        console.log("!!!!-2 point at diff axis2")
         console.log("-reference point is " ,item );
         if(two_x_range < 0 && two_y_range <0){
           console.log("will predice a point which is right and down");
@@ -252,7 +252,7 @@ var unique = Array.from(new Set(squardArray))
             <IonBackButton defaultHref="/question/list" />
           </IonButtons>
           <IonTitle>
-            Question 1
+            Question 1 
           </IonTitle>          
         </IonToolbar>
       </IonHeader>

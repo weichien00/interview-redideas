@@ -14,6 +14,8 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCardSubtitle,
+  IonButtons,
+  IonBackButton,
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
 

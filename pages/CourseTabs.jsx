@@ -38,9 +38,8 @@ const CourseTabs = () => {
         <Route path="/question/c3">
           <Question3 />
         </Route>
-        <Route path="/question/:courseId">
-          <CourseGoals />
-        </Route>
+        
+        
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
         <IonTabButton tab="all-goal" href="/question/all-goals">
