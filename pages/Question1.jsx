@@ -222,7 +222,7 @@ coords.map((item, key) => {
             var point_4x_right = current_coor.x - two_x_range;
             var point_4y_down = current_coor.y + two_y_range; //y-axis down
         }else if(two_x_range > 0 && two_y_range >0){          
-          console.log("will predice a point which is left and up");
+          console.log("will predice a point which is left and up 1");
           var point_4x_right = current_coor.x - two_x_range;
           var point_4y_down = current_coor.y + two_y_range; //y-axis down
 
