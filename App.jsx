@@ -17,7 +17,7 @@ import { IonReactRouter } from "@ionic/react-router";
 
 import { home, informationCircle, person, search } from "ionicons/icons";
 
-import CourseTabs from "./pages/CourseTabs";
+import CourseTabs from "./pages/MenuTabs";
 import Question1 from "./pages/Question1";
 import Question2 from "./pages/Question2";
 import Question3 from "./pages/Question3";

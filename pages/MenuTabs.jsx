@@ -11,7 +11,7 @@ import {
 
 import Courses from "./Courses";
 import CourseGoals from "./CourseGoals";
-import AllGoals from "./AllGoals";
+import MyProfile from "./MyProfile";
 import Question1 from "./Question1";
 import Question2 from "./Question2";
 import Question3 from "./Question3";
@@ -28,7 +28,7 @@ const CourseTabs = () => {
           <Courses />
         </Route>
         <Route path="/question/all-goals" exact>
-          <AllGoals />
+          <MyProfile />
         </Route>                
         
       </IonRouterOutlet>

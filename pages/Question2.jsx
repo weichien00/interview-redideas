@@ -34,7 +34,7 @@ const Question2 = function () {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/question/list" />
           </IonButtons>
-          <IonTitle>Question 3 {}</IonTitle>
+          <IonTitle>Question 2</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -44,7 +44,7 @@ const Question2 = function () {
               <IonCard>
                 <IonCardHeader>
                   <IonCardSubtitle></IonCardSubtitle>
-                  <IonCardTitle>Question 3</IonCardTitle>
+                  <IonCardTitle>Question 2</IonCardTitle>
                 </IonCardHeader>
 
                 <IonCardContent>

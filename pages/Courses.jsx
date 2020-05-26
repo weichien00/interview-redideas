@@ -76,15 +76,7 @@ const Course = () => {
               <IonCol size-md="4" offset-md="4">
                 <IonCard>
                   <IonCardHeader>
-                    <IonCardTitle>{course.title}</IonCardTitle>
-                    <IonCardSubtitle>
-                      Last update {" "}
-                      {course.enrolled.toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "2-digit",
-                        day: "2-digit",
-                      })}
-                    </IonCardSubtitle>
+                    <IonCardTitle>{course.title}</IonCardTitle>                    
                   </IonCardHeader>
                   <IonCardContent>
                     <div className="ion-text-right">
