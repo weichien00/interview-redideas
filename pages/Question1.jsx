@@ -212,8 +212,9 @@ coords.map((item, key) => {
         if(two_x_range < 0 && two_y_range <0){
           console.log("will predice a point which is right and down");
           var point_4x_right = current_coor.x - two_x_range;
-          var point_4y_down = current_coor.y + two_y_range; //y-axis down          
+          var point_4y_down = current_coor.y + two_y_range; //y-axis down         
         }else if(two_x_range < 0 && two_y_range >0){
+          
           console.log("will predice a point which is right and up");
 
         }else if(two_x_range > 0 && two_y_range <0){
@@ -222,6 +223,9 @@ coords.map((item, key) => {
             var point_4y_down = current_coor.y + two_y_range; //y-axis down
         }else if(two_x_range > 0 && two_y_range >0){          
           console.log("will predice a point which is left and up");
+          var point_4x_right = current_coor.x - two_x_range;
+          var point_4y_down = current_coor.y + two_y_range; //y-axis down
+
         }
 
         console.log("(",point_4x_right + ","+point_4y_down+")");
@@ -252,7 +256,7 @@ var unique = Array.from(new Set(squardArray))
             <IonBackButton defaultHref="/question/list" />
           </IonButtons>
           <IonTitle>
-            Question 1 
+            Question 1
           </IonTitle>          
         </IonToolbar>
       </IonHeader>
