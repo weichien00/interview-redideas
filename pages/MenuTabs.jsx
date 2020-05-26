@@ -9,7 +9,7 @@ import {
   IonLabel,
 } from "@ionic/react";
 
-import Courses from "./Courses";
+import Questions from "./Questions";
 import MyProfile from "./MyProfile";
 import Question1 from "./Question1";
 import Question2 from "./Question2";
@@ -24,7 +24,7 @@ const CourseTabs = () => {
       <IonRouterOutlet>
         <Redirect path="/question" to="/question/list" exact />
         <Route path="/question/list" exact>
-          <Courses />
+          <Questions />
         </Route>
         <Route path="/question/all-goals" exact>
           <MyProfile />
@@ -36,7 +36,7 @@ const CourseTabs = () => {
           <IonIcon icon={list} />
           <IonLabel>My Profile</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="courses" href="/question/list">
+        <IonTabButton tab="questions" href="/question/list">
           <IonIcon icon={trophyOutline} />
           <IonLabel>All Question</IonLabel>
         </IonTabButton>

@@ -17,7 +17,7 @@ import { IonReactRouter } from "@ionic/react-router";
 
 import { home, informationCircle, person, search } from "ionicons/icons";
 
-import CourseTabs from "./pages/MenuTabs";
+import MenuTabs from "./pages/MenuTabs";
 import Question1 from "./pages/Question1";
 import Question2 from "./pages/Question2";
 import Question3 from "./pages/Question3";
@@ -40,7 +40,7 @@ const App = () => {
               render={() => <Redirect to={urls.APP_HOME} />}
             />
             <Route path="/question/list" exact>
-              <CourseTabs />
+              <MenuTabs />
             </Route>
               <Route path="/question/c1"><Question1 /></Route>                          
               <Route path="/question/c2"><Question2 /></Route>                          
