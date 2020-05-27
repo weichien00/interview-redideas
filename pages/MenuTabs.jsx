@@ -26,13 +26,13 @@ const CourseTabs = () => {
         <Route path="/question/list" exact>
           <Questions />
         </Route>
-        <Route path="/question/all-goals" exact>
+        <Route path="/profile" exact>
           <MyProfile />
-        </Route>                
+        </Route>   
         
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
-        <IonTabButton tab="all-goal" href="/question/all-goals">
+        <IonTabButton tab="all-goal" href="/profile">
           <IonIcon icon={list} />
           <IonLabel>My Profile</IonLabel>
         </IonTabButton>

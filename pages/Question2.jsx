@@ -53,7 +53,7 @@ unique and other numbers are pair (ex: [4, 5, 6, 5, 6], return 4)
                 </IonCardContent>
               </IonCard>
             </IonCol>
-          </IonRow> 
+          </IonRow>
 
           <IonRow>
             <IonCol>
