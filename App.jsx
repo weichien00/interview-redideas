@@ -23,10 +23,6 @@ import Question2 from "./pages/Question2";
 import Question3 from "./pages/Question3";
 import Question4 from "./pages/Question4";
 
-import urls from "./urls";
-
-import Tabs from "./Tabs";
-
 const App = () => {
   console.log("APP");
   return (
@@ -48,8 +44,7 @@ const App = () => {
               <Route path="/question/c4"><Question4 /></Route>                          
 
             <Redirect path="/" to="/question/list" exact />
-          </IonRouterOutlet>
-          <Route path="/app" component={Tabs} />
+          </IonRouterOutlet>          
         </IonPage>
       </IonReactRouter>
     </IonApp>
