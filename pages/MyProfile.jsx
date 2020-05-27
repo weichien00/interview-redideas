@@ -42,7 +42,7 @@ const AllGoals = () => {
               <IonCard>
                 <IonCardHeader>
                   <IonCardSubtitle></IonCardSubtitle>
-                  <IonCardTitle>Previous Expereince</IonCardTitle>
+                  <IonCardTitle>Previous Project/Experiences</IonCardTitle>
                 </IonCardHeader>
 
                 <IonCardContent>
